@@ -93,7 +93,7 @@ silly like make a module ``settings.py`` that does something magical like:
     globals().update(betterconfig.load('./fancy.cfg'))
 
 Installing
-----------
+==========
 
 The betterconfig project lives on github_, and is available via pip_.
 
@@ -101,14 +101,14 @@ The betterconfig project lives on github_, and is available via pip_.
 .. _pip: https://pypi.python.org/pypi/betterconfig/0.1
 
 Installing v0.2 From Pip
-========================
+------------------------
 
 ::
 
     sudo pip install betterconfig==0.1
 
 Installing v0.1 From Source
-===========================
+---------------------------
 
 ::
 
@@ -119,7 +119,7 @@ Installing v0.1 From Source
 
 
 Authors
--------
+=======
 
 | Matthew Story <matt.story@axial.net>
 | Inspired By: http://stackoverflow.com/a/6209146
