@@ -7,7 +7,7 @@ and a simpler interface built on python's builtin ConfigParser format, along
 with a drastically simplified interface for loading configs.
 
 Type Coercion Boilerplate Sucks
--------------------------------
+===============================
 
 ConfigParser, like many config languages, treats all values as strings,
 meaning that when you have configs like this:
@@ -55,7 +55,7 @@ strings, numbers, tuples, lists, dicts, booleans, and None.
 .. _ast.literal_eval: http://docs.python.org/2/library/ast.html#ast.literal_eval
 
 More Flexibility in Config, Less Config by Module
--------------------------------------------------------
+=================================================
 
 We wanted a config language that was as easy to use as a settings module in
 django or flask (and nearly as extensible), but less magical to initialize,
