@@ -54,7 +54,7 @@ strings, numbers, tuples, lists, dicts, booleans, and None.
 
 .. _ast.literal_eval: http://docs.python.org/2/library/ast.html#ast.literal_eval
 
-More Flexibility in Config, Means Less Config by Module
+More Flexibility in Config, Less Config by Module
 -------------------------------------------------------
 
 We wanted a config language that was as easy to use as a settings module in
