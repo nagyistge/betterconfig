@@ -92,8 +92,34 @@ silly like make a module ``settings.py`` that does something magical like:
     import betterconfig
     globals().update(betterconfig.load('./fancy.cfg'))
 
+Installing
+==========
+
+The betterconfig project lives on github_, and is available via pip_.
+
+.. _github: https://github.com/axialmarket/betterconfig
+.. _pip: https://pypi.python.org/pypi/betterconfig/0.1
+
+Installing v0.2 From Pip
+------------------------
+
+::
+
+    sudo pip install betterconfig==0.1
+
+Installing v0.1 From Source
+---------------------------
+
+::
+
+    curl https://github.com/axialmarket/betterconfig/archive/version_0.1.tar.gz | tar vzxf -
+    cd betterconfig
+    sudo python setup.py install
+
+
+
 Authors
--------
+=======
 
 | Matthew Story <matt.story@axial.net>
 | Inspired By: http://stackoverflow.com/a/6209146
