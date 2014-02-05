@@ -3,8 +3,8 @@ betterconfig
 ============
 
 betterconfig provides a more convenient and extensible configuration language,
-and a simpler built on python's builtin ConfigParser format, along with a
-drastically simplified interface for loading configs.
+and a simpler interface built on python's builtin ConfigParser format, along
+with a drastically simplified interface for loading configs.
 
 Type Coercion Boilerplate Sucks
 -------------------------------
