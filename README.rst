@@ -84,8 +84,8 @@ load it into a dict:
     import betterconfig
     settings = betterconfig.load('./fancy.cfg')
 
-And if you're really in love with `.` notation, you can always do something
-silly like make a module `settings.py` that does something magical like:
+And if you're really in love with ``.`` notation, you can always do something
+silly like make a module ``settings.py`` that does something magical like:
 
 ::
 
