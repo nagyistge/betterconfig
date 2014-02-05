@@ -92,9 +92,9 @@ class _Sectionless(object):
 ######## END SECTIONLESS HACKS
 
 def _id_and_dir(cfg_file):
-    '''Return inode and dirname of open filish if they are available.
+    '''Return inode and dirname of open file-ish if they are available.
         cfg_file
-         - filish type (file, StringIO)'''
+         - file-ish type (file, StringIO)'''
     dir_name = os.path.dirname(getattr(cfg_file, 'name', ''))
     try:
         return os.fstat(cfg_file.fileno()).st_ino, dir_name
@@ -120,7 +120,7 @@ def _expand_includes(include, cur_dir):
 def load(*cfgs, **kwargs):
     '''Load betterconfig config files into a python dict.
         cfgs
-         - iterable of filish types (file, StringIO, etc)
+         - iterable of file-ish types (file, StringIO, etc)
         include='include'
          - name of the 'include' directive in a betterconfig file, to disable
            includes, send None
