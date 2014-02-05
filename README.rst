@@ -100,7 +100,7 @@ The betterconfig project lives on github_, and is available via pip_.
 .. _github: https://github.com/axialmarket/betterconfig
 .. _pip: https://pypi.python.org/pypi/betterconfig/0.1
 
-Installing v0.2 From Pip
+Installing v0.1 From Pip
 ------------------------
 
 ::
