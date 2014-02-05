@@ -54,7 +54,8 @@ Would yield:
 import os
 import ast
 import glob
-from ConfigParser import ConfigParser, MissingSectionHeaderError
+from ConfigParser import SafeConfigParser, RawConfigParser,\
+                         MissingSectionHeaderError
 
 ######## BEGIN SECTIONLESS HACKS
 class _Sectionless(object):
@@ -80,6 +81,7 @@ class _Sectionless(object):
         return False, open(file_, 'r')
 
     def readline(self):
+        '''The read interface used by ConfigParser'''
         if self.__secthead:
             try:
                 return self.__secthead
@@ -90,7 +92,9 @@ class _Sectionless(object):
 ######## END SECTIONLESS HACKS
 
 def _id_and_dir(cfg_file):
-    '''Return inode and dirname of open filish if they are available.'''
+    '''Return inode and dirname of open filish if they are available.
+        cfg_file
+         - filish type (file, StringIO)'''
     dir_name = os.path.dirname(getattr(cfg_file, 'name', ''))
     try:
         return os.fstat(cfg_file.fileno()).st_ino, dir_name
@@ -114,10 +118,24 @@ def _expand_includes(include, cur_dir):
     return expanded
 
 def load(*cfgs, **kwargs):
-    '''Load a betterconfig config file into a python dict and return.'''
+    '''Load betterconfig config files into a python dict.
+        cfgs
+         - iterable of filish types (file, StringIO, etc)
+        include='include'
+         - name of the 'include' directive in a betterconfig file, to disable
+           includes, send None
+        default='default'
+         - name used for default section, whose values are stored that the top
+           level of the returned python dictionary.
+        seen=set()
+         - a set of seen cfg identifiers (inodes), to prevent infinitely
+           recursive includes.
+        raw=False
+         - disables interpolation of %(tokens)s when truthy'''
     opts = { 'include': kwargs.pop('include', 'include'),
              'default': kwargs.pop('default', '_'),
-             'seen': kwargs.pop('seen', set()) }
+             'seen': kwargs.pop('seen', set()),
+             'raw': kwargs.pop('raw', False), }
     if kwargs:
         raise TypeError('{} is an invalid keyword argument'\
                         'for this function'.format(kwargs.keys()[0]))
@@ -133,7 +151,7 @@ def load(*cfgs, **kwargs):
             elif id_ is not None:
                 opts['seen'].add(id_)
 
-            parser = ConfigParser()
+            parser = RawConfigParser() if opts['raw'] else SafeConfigParser()
             parser.readfp(cfg_file)
 
             for sect in parser.sections():
