@@ -97,7 +97,8 @@ def _id_and_dir(cfg_file):
          - file-ish type (file, StringIO)'''
     dir_name = os.path.dirname(getattr(cfg_file, 'name', ''))
     try:
-        return os.fstat(cfg_file.fileno()).st_ino, dir_name
+        stat = os.fstat(cfg_file.fileno())
+        return '-'.join([str(stat.st_ino), str(stat.st_dev)]), dir_name
     except AttributeError:
         return None, dir_name
 
@@ -130,12 +131,12 @@ def load(*cfgs, **kwargs):
         seen=set()
          - a set of seen cfg identifiers (inodes), to prevent infinitely
            recursive includes.
-        raw=False
-         - disables interpolation of %(tokens)s when truthy'''
+        raw=True
+         - enables interpolation of %(tokens)s when falsy'''
     opts = { 'include': kwargs.pop('include', 'include'),
              'default': kwargs.pop('default', '_'),
              'seen': kwargs.pop('seen', set()),
-             'raw': kwargs.pop('raw', False), }
+             'raw': kwargs.pop('raw', True), }
     if kwargs:
         raise TypeError('{} is an invalid keyword argument'\
                         'for this function'.format(kwargs.keys()[0]))
