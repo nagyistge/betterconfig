@@ -1,3 +1,5 @@
 include *.rst
 include *.txt
+recursive-include examples *
 include betterconfig.py
+include test_betterconfig.py

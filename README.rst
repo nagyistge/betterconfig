@@ -105,6 +105,7 @@ Installing v0.1 From Pip
 
 ::
 
+    # 0.1.1b is not yet available via pip
     sudo pip install betterconfig==0.1
 
 Installing v0.1 From Source
@@ -112,7 +113,7 @@ Installing v0.1 From Source
 
 ::
 
-    curl https://github.com/axialmarket/betterconfig/archive/version_0.1.tar.gz | tar vzxf -
+    curl https://github.com/axialmarket/betterconfig/archive/version_0.1.1b.tar.gz | tar vzxf -
     cd betterconfig
     sudo python setup.py install
 
