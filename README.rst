@@ -105,6 +105,7 @@ Installing v0.1 From Pip
 
 ::
 
+    # 0.1.1b is not yet available via pip
     sudo pip install betterconfig==0.1
 
 Installing v0.1 From Source
@@ -112,15 +113,26 @@ Installing v0.1 From Source
 
 ::
 
-    curl https://github.com/axialmarket/betterconfig/archive/version_0.1.tar.gz | tar vzxf -
+    curl https://github.com/axialmarket/betterconfig/archive/version_0.1.1b.tar.gz | tar vzxf -
     cd betterconfig
     sudo python setup.py install
 
+Running Tests
+=============
+
+The betterconfig tests require py.test, which can be installed via pip.
+
+::
+
+    sudo pip install pytest==2.5.2
+    py.test test_betterconfig.py
 
 
-Authors
-=======
+
+Authors and Contributors
+========================
 
 | Matthew Story <matt.story@axial.net>
+| Jon Rosebaugh <jon@inklesspen.com>
 | Inspired By: http://stackoverflow.com/a/6209146
 | Inspired By: http://stackoverflow.com/a/2819788

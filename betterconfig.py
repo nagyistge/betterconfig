@@ -175,7 +175,7 @@ def load(*cfgs, **kwargs):
 
 __all__ = ['load']
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     import sys
     import pprint
     pprint.pprint(load(*(sys.argv[1:] or [sys.stdin])))
