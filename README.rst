@@ -116,11 +116,22 @@ Installing v0.1 From Source
     cd betterconfig
     sudo python setup.py install
 
+Running Tests
+=============
+
+The betterconfig tests require py.test, which can be installed via pip.
+
+::
+
+    sudo pip install pytest==2.5.2
+    py.test test_betterconfig.py
 
 
-Authors
-=======
+
+Authors and Contributors
+========================
 
 | Matthew Story <matt.story@axial.net>
+| Jon Rosebaugh <jon@inklesspen.com>
 | Inspired By: http://stackoverflow.com/a/6209146
 | Inspired By: http://stackoverflow.com/a/2819788
