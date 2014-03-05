@@ -153,6 +153,7 @@ def load(*cfgs, **kwargs):
                 opts['seen'].add(id_)
 
             parser = RawConfigParser() if opts['raw'] else SafeConfigParser()
+            parser.optionxform = lambda x: x #ConfigParser calls lower() on each key.
             parser.readfp(cfg_file)
 
             for sect in parser.sections():

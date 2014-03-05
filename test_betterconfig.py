@@ -47,3 +47,12 @@ def test_glob_includes():
     # file takes precedence
     actual = betterconfig.load("examples/glob_includes.cfg")
     assert expected == actual
+
+def test_case():
+    expected = {
+        'MixedCase': {
+            'Option': 4
+        }
+    }
+    actual = betterconfig.load("examples/case.cfg")
+    assert expected == actual
