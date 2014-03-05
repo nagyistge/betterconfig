@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='betterconfig',
-    version='0.1',
+    version='0.2',
     author='Matt Story',
     author_email='matt.story@axial.net',
     py_modules=['betterconfig'],
