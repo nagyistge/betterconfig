@@ -4,7 +4,7 @@ betterconfig provides a more convenient and extensible configuration language,
 and a simpler built on python's builtin ConfigParser format, along with a
 drastically simplified interface for loading configs.
 
-@version: 0.1b
+@version: 0.2
 @author: Matt Story <matt.story@axial.net>
 
 No More Type Coercion
