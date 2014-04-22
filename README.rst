@@ -98,22 +98,21 @@ Installing
 The betterconfig project lives on github_, and is available via pip_.
 
 .. _github: https://github.com/axialmarket/betterconfig
-.. _pip: https://pypi.python.org/pypi/betterconfig/0.2
+.. _pip: https://pypi.python.org/pypi/betterconfig/0.3
 
-Installing v0.2 From Pip
+Installing v0.3 From Pip
 ------------------------
 
 ::
 
-    # 0.2 is not yet available via pip
-    sudo pip install betterconfig==0.2
+    sudo pip install betterconfig==0.3
 
-Installing v0.2 From Source
+Installing v0.3 From Source
 ---------------------------
 
 ::
 
-    curl https://github.com/axialmarket/betterconfig/archive/version_0.2.tar.gz | tar vzxf -
+    curl https://github.com/axialmarket/betterconfig/archive/version_0.3.tar.gz | tar vzxf -
     cd betterconfig
     sudo python setup.py install
 
