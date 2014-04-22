@@ -132,16 +132,19 @@ def load(*cfgs, **kwargs):
          - a set of seen cfg identifiers (inodes), to prevent infinitely
            recursive includes.
         raw=True
-         - enables interpolation of %(tokens)s when falsy'''
+         - enables interpolation of %(tokens)s when falsy
+        mapper=dict
+         - type to use for the mapping.'''
     opts = { 'include': kwargs.pop('include', 'include'),
              'default': kwargs.pop('default', '_'),
              'seen': kwargs.pop('seen', set()),
-             'raw': kwargs.pop('raw', True), }
+             'raw': kwargs.pop('raw', True),
+             'mapper': kwargs.pop('mapper', dict) }
     if kwargs:
         raise TypeError('{} is an invalid keyword argument'\
                         'for this function'.format(kwargs.keys()[0]))
 
-    compiled_config = {}
+    compiled_config = opts['mapper']()
     for cfg in cfgs:
         includes = []
         with _Sectionless(cfg, opts['default']) as cfg_file:
